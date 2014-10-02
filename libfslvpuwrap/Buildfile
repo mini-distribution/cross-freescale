@@ -1,0 +1,28 @@
+# Description: Freescale VPU wrapper library
+# URL: http://www.freescale.com
+# License: Freescale EULA
+
+name=libfslvpuwrap
+version=1.0.46
+release=1
+source=(http://www.freescale.com/lgfiles/NMG/MAD/YOCTO//$name-$version.bin)
+depends=imx-vpu
+
+build() {
+
+   chmod +x $name-$version.bin
+   ./$name-$version.bin --force --auto-accept
+
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

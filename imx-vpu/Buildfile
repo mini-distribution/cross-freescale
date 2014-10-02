@@ -1,0 +1,22 @@
+# Description: Freescale iMX VPU library
+# URL: http://www.freescale.com
+# License: Freescale EULA
+
+name=imx-vpu
+version=3.10.17-1.0.0
+release=1
+source=(http://www.freescale.com/lgfiles/NMG/MAD/YOCTO//$name-$version.bin)
+
+build() {
+   chmod +x $name-$version.bin
+   ./$name-$version.bin --force --auto-accept
+
+   cd $name-$version
+
+   make -j $JOBS \
+        PLATFORM=IMX6Q \
+        CC=$HOST-gcc \
+        AR=$HOST-ar
+
+   make DEST_DIR=$PKG install
+}
