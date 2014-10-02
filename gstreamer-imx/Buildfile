@@ -1,0 +1,18 @@
+# Description: Freescale iMX gstreamer plugins
+# URL: https://github.com/Freescale/gstreamer-imx
+# License: LGPLv2
+
+name=gstreamer-imx
+version=git-d29c7bf
+release=1
+source=(http://www.buildgear.org/mirror/freescale/$name-$version.tar.xz)
+depends=(gst-plugins-base native/linux-source libfslvpuwrap)
+
+build() {
+   cd $name-$version
+
+   CC=$HOST-gcc \
+   ./waf configure --prefix=$PKG/usr --kernel-headers=$NATIVE_SYSROOT/usr/src/linux/include
+   ./waf
+   ./waf install
+}
