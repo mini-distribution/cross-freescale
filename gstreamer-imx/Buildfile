@@ -6,7 +6,7 @@ name=gstreamer-imx
 version=git-d29c7bf
 release=1
 source=(http://www.buildgear.org/mirror/freescale/$name-$version.tar.xz)
-depends=(gst-plugins-base native/linux-source libfslvpuwrap)
+depends=(gst-plugins-base native/linux-source libfslvpuwrap firmware-imx)
 
 build() {
    cd $name-$version
