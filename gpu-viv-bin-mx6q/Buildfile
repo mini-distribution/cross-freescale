@@ -1,0 +1,14 @@
+# Description: Freescale iMX GPU binaries
+# URL: http://www.freescale.com
+# License: Freescale EULA
+
+name=gpu-viv-bin-mx6q
+version=3.10.17-1.0.2
+release=1
+source=(http://repository.timesys.com/buildsources/g/$name/$name-$version/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   make FLOAT_ABI=hardfp DESTDIR=$PKG install
+}
