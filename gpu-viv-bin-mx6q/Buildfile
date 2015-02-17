@@ -13,5 +13,11 @@ build() {
 
    patch -p1 -i $SRC/gpu-viv-bin-mx6q-3.10.17-1.0.2-add-glesv2-symlinks.patch
 
-   make FLOAT_ABI=hardfp DESTDIR=$PKG install
+   make FLOAT_ABI=hardfp \
+        BACKEND=fb \
+        DESTDIR=$PKG \
+        install
+
+   # Remove samples to save size
+   #rm -rf $PKG/opt
 }
