@@ -1,0 +1,11 @@
+--- a/Makefile	2014-06-20 13:02:36.555395805 -0400
++++ b/Makefile	2014-06-20 12:58:25.991401302 -0400
+@@ -43,6 +43,8 @@
+ 	mv $(DESTDIR)/usr/lib/libGLESv2-$(BACKEND).so $(DESTDIR)/usr/lib/libGLESv2.so
+ 	ln -sf libGLESv2.so $(DESTDIR)/usr/lib/libEGL.so.2
+ 	ln -sf libGLESv2.so $(DESTDIR)/usr/lib/libEGL.so.2.0.0
++	ln -sf libGLESv2.so $(DESTDIR)/usr/lib/libGLESv2.so.2
++	ln -sf libGLESv2.so $(DESTDIR)/usr/lib/libGLESv2.so.2.0.0
+ 	
+ ifeq (y,$(USE_DIRECTFB))
+ 	mkdir -p $(DESTDIR)/etc

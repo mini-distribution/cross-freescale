@@ -5,10 +5,13 @@
 name=gpu-viv-bin-mx6q
 version=3.10.17-1.0.2
 release=1
-source=(http://repository.timesys.com/buildsources/g/$name/$name-$version/$name-$version.tar.gz)
+source=(http://repository.timesys.com/buildsources/g/$name/$name-$version/$name-$version.tar.gz
+        gpu-viv-bin-mx6q-3.10.17-1.0.2-add-glesv2-symlinks.patch)
 
 build() {
    cd $name-$version
+
+   patch -p1 -i $SRC/gpu-viv-bin-mx6q-3.10.17-1.0.2-add-glesv2-symlinks.patch
 
    make FLOAT_ABI=hardfp DESTDIR=$PKG install
 }
