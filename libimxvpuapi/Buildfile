@@ -1,0 +1,18 @@
+# Description: Frontend for the i.MX6 VPU hardware video engine
+# URL: https://github.com/Freescale/libimxvpuapi
+# License: LGPLv2
+
+name=libimxvpuapi
+version=git8e771726
+release=1
+source=(http://mirror.mini-distribution.io/nxp/$name-$version.tar.xz)
+depends=(imx-vpu)
+
+build() {
+   cd $name-$version
+
+   CC=$HOST-gcc \
+   ./waf configure --prefix=$PKG/usr
+   ./waf
+   ./waf install
+}
