@@ -3,7 +3,7 @@
 # License: Freescale EULA
 
 name=imx-vpu
-version=3.10.17-1.0.0
+version=5.4.32
 release=1
 source=(http://www.freescale.com/lgfiles/NMG/MAD/YOCTO//$name-$version.bin)
 
