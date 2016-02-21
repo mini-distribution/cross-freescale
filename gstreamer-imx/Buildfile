@@ -3,10 +3,10 @@
 # License: LGPLv2
 
 name=gstreamer-imx
-version=git-d29c7bf
+version=gitdfd79250
 release=1
 source=(http://www.buildgear.org/mirror/freescale/$name-$version.tar.xz)
-depends=(gst-plugins-base native/linux-source libfslvpuwrap firmware-imx)
+depends=(gst-plugins-base gst-plugins-bad native/linux-source libfslvpuwrap firmware-imx libimxvpuapi)
 
 build() {
    cd $name-$version
