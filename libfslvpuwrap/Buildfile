@@ -3,7 +3,7 @@
 # License: Freescale EULA
 
 name=libfslvpuwrap
-version=1.0.46
+version=1.0.61
 release=1
 source=(http://www.freescale.com/lgfiles/NMG/MAD/YOCTO//$name-$version.bin)
 depends=imx-vpu
