@@ -5,7 +5,7 @@
 name=gstreamer-imx
 version=gitdfd79250
 release=1
-source=(http://www.buildgear.org/mirror/freescale/$name-$version.tar.xz)
+source=(http://mirror.mini-distribution.io/nxp/$name-$version.tar.xz)
 depends=(gst-plugins-base gst-plugins-bad native/linux-source libfslvpuwrap firmware-imx libimxvpuapi)
 
 build() {
